@@ -149,7 +149,8 @@ public:
      * @param truncate truncate paramter
      * @param d metric object
      */
-    Tree(const std::vector<recType>& p, int truncate = -1, Metric d = Metric());  // with a vector of data records
+    template <class Container>
+    Tree(const Container& p, int truncateArg = -1, Metric d = Metric());
 
     /**
      * @brief Destroy the Tree object

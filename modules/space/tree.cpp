@@ -324,7 +324,8 @@ Tree<recType, Metric>::Tree(const recType& p, int truncateArg /*=-1*/, Metric d)
 
 /*** constructor: with a vector data records **/
 template <class recType, class Metric>
-Tree<recType, Metric>::Tree(const std::vector<recType>& p, int truncateArg /*=-1*/, Metric d)
+template <class Container>
+Tree<recType, Metric>::Tree(const Container& p, int truncateArg /*=-1*/, Metric d)
     : metric_(d)
 {
     min_scale = 1000;
@@ -740,7 +741,7 @@ std::vector<recType> Tree<recType, Metric>::toVector()
     while (stack.size() > 0) {
         current = stack.top();
         stack.pop();
-        zipped.push_back(std::make_pair(current->data, current->ID));  // Add to dataset
+        zipped.push_back(std::make_pair(current->get_data(), current->ID));  // Add to dataset
         for (const auto& child : *current)
             stack.push(child);
     }
