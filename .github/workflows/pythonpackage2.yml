@@ -14,6 +14,6 @@ jobs:
       uses: RalfG/python-wheels-manylinux-build@v0.2.2-manylinux2014_x86_64
       with:
         python-versions: 'cp37-cp37m'
-        build-requirements: 'wheel>=32.0 setuptools cmake_setuptools'
+        build-requirements: 'wheel>=0.32.0 setuptools cmake_setuptools'
         system-packages: ''
         package-path: './python/'
