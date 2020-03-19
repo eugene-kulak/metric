@@ -12,7 +12,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/panda-official/metric",
     packages=setuptools.find_packages(),
-    install_requires=['cmake_setuptools'],
+    install_requires=['wheel>=0.34.2', 'setuptools>=28.8.0', 'cmake_setuptools==0.1.3'],
     license='MPL v2.0',
     classifiers=[
         "Development Status :: 3 - Alpha",
