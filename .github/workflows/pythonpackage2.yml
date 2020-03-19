@@ -23,5 +23,4 @@ jobs:
         python-versions: 'cp37-cp37m'
         build-requirements: 'cython numpy'
         system-packages: 'lrzip-devel zlib-devel'
-        package-path: 'python/'
-        pip-wheel-args: '--no-deps'
+        package-path: './python/'
