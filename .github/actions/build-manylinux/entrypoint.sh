@@ -14,6 +14,7 @@ fi
 
 yum install -y cmake3
 export CMAKE_EXE=cmake3
+export METRIC_SOURCE_PATH=${PACKAGE_PATH}/../
 
 # Compile wheels
 arrPY_VERSIONS=(${PY_VERSIONS// / })
