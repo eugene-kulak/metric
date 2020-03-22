@@ -15,5 +15,5 @@ jobs:
       with:
         python-versions: 'cp37-cp37m'
         build-requirements: ''
-        system-packages: ''
+        system-packages: 'cmake3 openblas-devel python-numpy numpy'
         package-path: './python/'
