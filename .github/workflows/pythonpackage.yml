@@ -14,7 +14,16 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
-        python-version: 3.7
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install twine flake8
+    - name: Lint with flake8 for syntax errors
+      run: |
+        pip install flake8
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Build manylinux Python wheels
       uses: ./.github/actions/build-manylinux
       with:
@@ -22,3 +31,9 @@ jobs:
         build-requirements: ''
         system-packages: 'cmake3 openblas-devel boost-devel devtoolset-9'
         package-path: './python/'
+    - name: Publish wheels to PyPI
+      env:
+        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+      run: |
+        twine upload --repository-url https://test.pypi.org/legacy/ wheelhouse/*-manylinux*.whl
