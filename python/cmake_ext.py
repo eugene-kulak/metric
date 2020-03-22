@@ -39,6 +39,7 @@ class CMakeBuildExt(build_ext):
                 os.path.dirname(self.get_ext_fullpath(ext.name)))
 
             build_type = 'Debug' if self.debug else 'Release'
+            print('AAAAAAA', sys.executable)
             cmake_args = [CMAKE_EXE,
                           ext.sourcedir,
                           '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=' + output_dir,
