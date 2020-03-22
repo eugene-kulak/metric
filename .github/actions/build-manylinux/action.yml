@@ -1,7 +1,7 @@
 # action.yml
 name: 'Python wheels manylinux build'
-author: 'Eugene Kulak'
-description: 'Build manylinux wheels for a (Cython) Python package'
+author: 'Jura Gresko'
+description: 'Build manylinux wheels for a Python package'
 inputs:
   python-versions:
     description: 'Python versions to target, space-separated'
