@@ -2,7 +2,7 @@ name: Python package build
 on:
   push:
     branches:
-      - issue_35
+      - master
 
 jobs:
   deploy:
