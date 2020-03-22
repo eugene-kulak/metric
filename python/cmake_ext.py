@@ -42,6 +42,7 @@ class CMakeBuildExt(build_ext):
             print('AAAAAAA', sys.executable)
             cmake_args = [CMAKE_EXE,
                           ext.sourcedir,
+                          '-DPYTHON_EXECUTABLE:FILEPATH=' + sys.executable,
                           '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=' + output_dir,
                           '-DCMAKE_BUILD_TYPE=' + build_type]
             cmake_args.extend(
