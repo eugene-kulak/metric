@@ -14,6 +14,6 @@ jobs:
       uses: ./.github/actions/build-manylinux
       with:
         python-versions: 'cp37-cp37m'
-        build-requirements: 'numpy'
+        build-requirements: ''
         system-packages: ''
         package-path: './python/'
