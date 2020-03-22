@@ -27,7 +27,7 @@ for PY_VER in "${arrPY_VERSIONS[@]}"; do
     fi
     
     # Build wheels
-    ls /github/workspace/"${PACKAGE_PATH}"
+    ls /github/workspace/"${PACKAGE_PATH}/pybind11"
     /opt/python/"${PY_VER}"/bin/pip wheel /github/workspace/"${PACKAGE_PATH}" -w /github/workspace/wheelhouse/ ${PIP_WHEEL_ARGS} || { echo "Building wheels failed."; exit 1; }
 done
 
