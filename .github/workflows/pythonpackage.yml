@@ -27,8 +27,8 @@ jobs:
     - name: Build manylinux Python wheels
       uses: ./.github/actions/build-manylinux
       with:
-        python-versions: 'cp36-cp36m cp37-cp37m cp38-cp38'
-        build-requirements: ''
+        python-versions: 'cp37-cp37m'
+        build-requirements: '3.1.0'
         system-packages: 'cmake3 openblas-devel boost-devel devtoolset-9'
         package-path: './python/'
     - name: Publish wheels to PyPI
