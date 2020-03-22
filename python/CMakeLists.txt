@@ -12,7 +12,9 @@ set(PYBIND11_CPP_STANDARD -std=c++1z)
 project(metric_py DESCRIPTION "metric python binding")
 
 SET(SOURCE_PATH ${CMAKE_SOURCE_DIR}/src)
-SET(METRIC_SOURCE_PATH ${CMAKE_SOURCE_DIR}/..)
+if(NOT DEFINED METRIC_SOURCE_PATH)
+    SET(METRIC_SOURCE_PATH ${CMAKE_SOURCE_DIR}/..)
+endif(NOT DEFINED METRIC_SOURCE_PATH)
 
 find_package(Python3 COMPONENTS Interpreter Development)
 
