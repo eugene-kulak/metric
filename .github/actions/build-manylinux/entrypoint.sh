@@ -37,4 +37,4 @@ for whl in /github/workspace/wheelhouse/*-linux*.whl; do
 done
 
 echo "Succesfully build wheels:"
-ll -h /github/workspace/wheelhouse
+ls -alh /github/workspace/wheelhouse
