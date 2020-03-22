@@ -17,5 +17,5 @@ jobs:
       with:
         python-versions: 'cp37-cp37m'
         build-requirements: ''
-        system-packages: 'cmake3 openblas-devel boost-devel'
+        system-packages: 'cmake3 openblas-devel boost-devel devtoolset-9'
         package-path: './python/'
