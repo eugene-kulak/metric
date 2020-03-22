@@ -18,6 +18,9 @@ else ()
     SET(METRIC_SOURCE_PATH ENV{METRIC_SOURCE_PATH})
 endif()
 
+message("AAAAAAAA")
+message( ${METRIC_SOURCE_PATH} )
+
 find_package(Python3 COMPONENTS Interpreter Development)
 
 set(Boost_DEBUG on)
