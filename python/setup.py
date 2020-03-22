@@ -1,5 +1,5 @@
 import setuptools
-from cmake_setuptools import CMakeExtension, CMakeBuildExt
+from cmake_ext import CMakeExtension, CMakeBuildExt
 setuptools.setup(
     name='metric-py',
     version='0.0.1',
@@ -12,7 +12,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/panda-official/metric",
     packages=setuptools.find_packages(),
-    install_requires=['wheel>=0.34.2', 'setuptools>=28.8.0', 'cmake_setuptools==0.1.3'],
+    python_requires='>=3.6',
+    install_requires=[],
     license='MPL v2.0',
     classifiers=[
         "Development Status :: 3 - Alpha",
