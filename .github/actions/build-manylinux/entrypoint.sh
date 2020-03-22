@@ -27,7 +27,7 @@ for PY_VER in "${arrPY_VERSIONS[@]}"; do
     fi
     
     # Build wheels
-    /opt/python/"${PY_VER}"/bin/pip wheel /github/workspace/"${PACKAGE_PATH}" -w /github/workspace/wheelhouse/ ${PIP_WHEEL_ARGS} || { echo "Building wheels failed."; exit 1; }
+    CMAKE_EXEC=cmake3 /opt/python/"${PY_VER}"/bin/pip wheel /github/workspace/"${PACKAGE_PATH}" -w /github/workspace/wheelhouse/ ${PIP_WHEEL_ARGS} || { echo "Building wheels failed."; exit 1; }
 done
 
 # Bundle external shared libraries into the wheels
