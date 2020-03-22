@@ -8,15 +8,15 @@ SYSTEM_PACKAGES=$3
 PACKAGE_PATH=$4
 PIP_WHEEL_ARGS=$5
 
-export METRIC_SOURCE_PATH=`python2 -c "import os,sys; print os.path.realpath(os.path.join(sys.argv[1], os.pardir))" ${PACKAGE_PATH}`
-ls ${METRIC_SOURCE_PATH}
-
 if [ ! -z "$SYSTEM_PACKAGES" ]; then
     yum install -y ${SYSTEM_PACKAGES}  || { echo "Installing yum package(s) failed."; exit 1; }
 fi
 
+yum install devtoolset-9
 yum install -y cmake3
+scl enable devtoolset-9 bash
 export CMAKE_EXE=cmake3
+export METRIC_SOURCE_PATH=`python2 -c "import os,sys; print os.path.realpath(os.path.join(sys.argv[1], os.pardir))" ${PACKAGE_PATH}`
 
 # Compile wheels
 arrPY_VERSIONS=(${PY_VERSIONS// / })
