@@ -2,7 +2,7 @@ import setuptools
 from cmake_ext import CMakeExtension, CMakeBuildExt
 setuptools.setup(
     name='metric-py',
-    version='0.0.1',
+    version='0.0.2',
     ext_modules=[CMakeExtension('all')],
     cmdclass={'build_ext': CMakeBuildExt},
     author="Jura Gresko",
